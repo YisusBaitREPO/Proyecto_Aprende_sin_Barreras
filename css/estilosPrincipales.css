@@ -1,5 +1,7 @@
 
-/* CONFIGURACIÓN GENERAL */
+/* =================================
+   CONFIGURACIÓN GENERAL
+================================= */
 
 * {
     margin: 0;
@@ -15,6 +17,7 @@
     --texto: #263445;
     --gris: #586779;
     --verde: #DDF3E6;
+    --borde: #DCE5EF;
 }
 
 html {
@@ -28,41 +31,44 @@ body {
     line-height: 1.7;
 }
 
-a {
-    color: var(--azul);
-}
-
 .contenedor {
     width: 90%;
     max-width: 1150px;
     margin: auto;
 }
 
-/* ACCESO AL CONTENIDO */
+/* =================================
+   ENLACE DE ACCESIBILIDAD
+================================= */
 
 .saltar-contenido {
     position: absolute;
     top: -100px;
     left: 10px;
+    z-index: 1000;
+
+    padding: 12px 18px;
+
     background-color: var(--azul-oscuro);
-    color: white;
-    padding: 12px;
-    z-index: 100;
+    color: var(--blanco);
+    border-radius: 5px;
 }
 
 .saltar-contenido:focus {
     top: 10px;
 }
 
-/* ENCABEZADO */
+/* =================================
+   ENCABEZADO
+================================= */
 
 .encabezado {
     background-color: var(--blanco);
     padding: 20px 0;
-    border-bottom: 1px solid #DCE5EF;
+    border-bottom: 1px solid var(--borde);
 }
 
-.encabezado .contenedor {
+.encabezado-contenido {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -99,7 +105,9 @@ a {
     text-decoration: underline;
 }
 
-/* PORTADA */
+/* =================================
+   PORTADA
+================================= */
 
 .portada {
     background-color: var(--celeste);
@@ -132,8 +140,8 @@ a {
 }
 
 .portada-texto > p:not(.subtitulo) {
-    margin-bottom: 25px;
     color: var(--gris);
+    margin-bottom: 25px;
 }
 
 .portada-imagen {
@@ -141,22 +149,29 @@ a {
 }
 
 .portada-imagen img {
+    display: block;
     width: 100%;
     border-radius: 15px;
 }
 
-/* BOTONES */
+/* =================================
+   BOTONES
+================================= */
 
 .boton {
     display: inline-block;
     background-color: var(--azul);
     color: var(--blanco);
+
     padding: 13px 25px;
+
     border: none;
     border-radius: 8px;
+
     text-decoration: none;
     font-size: 16px;
     font-weight: bold;
+
     cursor: pointer;
 }
 
@@ -164,7 +179,9 @@ a {
     background-color: var(--azul-oscuro);
 }
 
-/* SECCIONES */
+/* =================================
+   SECCIONES
+================================= */
 
 .seccion {
     padding: 70px 0;
@@ -186,7 +203,9 @@ a {
     color: var(--gris);
 }
 
-/* CURSOS */
+/* =================================
+   CURSOS
+================================= */
 
 .cursos-contenedor {
     display: grid;
@@ -196,7 +215,7 @@ a {
 
 .tarjeta-curso {
     padding: 25px;
-    border: 1px solid #DCE5EF;
+    border: 1px solid var(--borde);
     border-radius: 12px;
     background-color: var(--blanco);
 }
@@ -220,7 +239,9 @@ a {
     font-weight: bold;
 }
 
-/* NOSOTROS */
+/* =================================
+   NOSOTROS
+================================= */
 
 .nosotros {
     background-color: var(--celeste);
@@ -233,7 +254,9 @@ a {
     color: var(--texto);
 }
 
-/* ACCESIBILIDAD */
+/* =================================
+   ACCESIBILIDAD
+================================= */
 
 .accesibilidad-lista {
     display: grid;
@@ -256,25 +279,42 @@ a {
     color: var(--texto);
 }
 
-/* CONTACTO */
+/* =================================
+   CONTACTO
+================================= */
 
 .formulario {
     max-width: 600px;
     margin: auto;
+
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 18px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.campo label {
+    font-weight: bold;
 }
 
 .formulario input,
 .formulario textarea {
     width: 100%;
     padding: 13px;
+
     font-family: Arial, sans-serif;
     font-size: 16px;
+
     border: 1px solid #718096;
     border-radius: 7px;
+
     color: var(--texto);
+    background-color: var(--blanco);
 }
 
 .formulario textarea {
@@ -285,7 +325,9 @@ a {
     align-self: flex-start;
 }
 
-/* PIE DE PÁGINA */
+/* =================================
+   PIE DE PÁGINA
+================================= */
 
 .pie-pagina {
     background-color: var(--azul-oscuro);
@@ -294,7 +336,9 @@ a {
     padding: 25px 0;
 }
 
-/* ACCESIBILIDAD DEL TECLADO */
+/* =================================
+   FOCO VISIBLE
+================================= */
 
 a:focus-visible,
 button:focus-visible,
@@ -304,11 +348,13 @@ textarea:focus-visible {
     outline-offset: 4px;
 }
 
-/* DISEÑO PARA CELULARES */
+/* =================================
+   DISEÑO RESPONSIVE
+================================= */
 
 @media (max-width: 768px) {
 
-    .encabezado .contenedor {
+    .encabezado-contenido {
         flex-direction: column;
     }
 
@@ -335,3 +381,16 @@ textarea:focus-visible {
     }
 
 }
+
+/* =================================
+   RESPETAR MOVIMIENTO REDUCIDO
+================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+}
+
