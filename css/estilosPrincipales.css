@@ -1,0 +1,337 @@
+
+/* CONFIGURACIÓN GENERAL */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --azul: #24558A;
+    --azul-oscuro: #183B63;
+    --celeste: #EAF3FC;
+    --blanco: #FFFFFF;
+    --texto: #263445;
+    --gris: #586779;
+    --verde: #DDF3E6;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--blanco);
+    color: var(--texto);
+    line-height: 1.7;
+}
+
+a {
+    color: var(--azul);
+}
+
+.contenedor {
+    width: 90%;
+    max-width: 1150px;
+    margin: auto;
+}
+
+/* ACCESO AL CONTENIDO */
+
+.saltar-contenido {
+    position: absolute;
+    top: -100px;
+    left: 10px;
+    background-color: var(--azul-oscuro);
+    color: white;
+    padding: 12px;
+    z-index: 100;
+}
+
+.saltar-contenido:focus {
+    top: 10px;
+}
+
+/* ENCABEZADO */
+
+.encabezado {
+    background-color: var(--blanco);
+    padding: 20px 0;
+    border-bottom: 1px solid #DCE5EF;
+}
+
+.encabezado .contenedor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--azul-oscuro);
+}
+
+.logo span {
+    color: var(--azul);
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.menu a {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--texto);
+}
+
+.menu a:hover {
+    color: var(--azul);
+    text-decoration: underline;
+}
+
+/* PORTADA */
+
+.portada {
+    background-color: var(--celeste);
+    padding: 75px 0;
+}
+
+.portada-contenido {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.portada-texto {
+    flex: 1;
+}
+
+.subtitulo {
+    color: var(--azul);
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
+
+.portada h1 {
+    font-size: 42px;
+    line-height: 1.2;
+    color: var(--azul-oscuro);
+    margin-bottom: 20px;
+}
+
+.portada-texto > p:not(.subtitulo) {
+    margin-bottom: 25px;
+    color: var(--gris);
+}
+
+.portada-imagen {
+    flex: 1;
+}
+
+.portada-imagen img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+/* BOTONES */
+
+.boton {
+    display: inline-block;
+    background-color: var(--azul);
+    color: var(--blanco);
+    padding: 13px 25px;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.boton:hover {
+    background-color: var(--azul-oscuro);
+}
+
+/* SECCIONES */
+
+.seccion {
+    padding: 70px 0;
+}
+
+.titulo-seccion {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 40px;
+}
+
+.titulo-seccion h2 {
+    font-size: 32px;
+    color: var(--azul-oscuro);
+    margin-bottom: 12px;
+}
+
+.titulo-seccion p {
+    color: var(--gris);
+}
+
+/* CURSOS */
+
+.cursos-contenedor {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.tarjeta-curso {
+    padding: 25px;
+    border: 1px solid #DCE5EF;
+    border-radius: 12px;
+    background-color: var(--blanco);
+}
+
+.curso-icono {
+    font-size: 35px;
+    margin-bottom: 12px;
+}
+
+.tarjeta-curso h3 {
+    color: var(--azul-oscuro);
+    margin-bottom: 10px;
+}
+
+.tarjeta-curso p {
+    color: var(--gris);
+    margin-bottom: 15px;
+}
+
+.tarjeta-curso a {
+    font-weight: bold;
+}
+
+/* NOSOTROS */
+
+.nosotros {
+    background-color: var(--celeste);
+    text-align: center;
+}
+
+.nosotros .contenedor > p {
+    max-width: 800px;
+    margin: auto;
+    color: var(--texto);
+}
+
+/* ACCESIBILIDAD */
+
+.accesibilidad-lista {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.accesibilidad-item {
+    padding: 22px;
+    background-color: var(--verde);
+    border-radius: 10px;
+}
+
+.accesibilidad-item h3 {
+    color: var(--azul-oscuro);
+    margin-bottom: 8px;
+}
+
+.accesibilidad-item p {
+    color: var(--texto);
+}
+
+/* CONTACTO */
+
+.formulario {
+    max-width: 600px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.formulario input,
+.formulario textarea {
+    width: 100%;
+    padding: 13px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    border: 1px solid #718096;
+    border-radius: 7px;
+    color: var(--texto);
+}
+
+.formulario textarea {
+    resize: vertical;
+}
+
+.formulario .boton {
+    align-self: flex-start;
+}
+
+/* PIE DE PÁGINA */
+
+.pie-pagina {
+    background-color: var(--azul-oscuro);
+    color: var(--blanco);
+    text-align: center;
+    padding: 25px 0;
+}
+
+/* ACCESIBILIDAD DEL TECLADO */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid #C06A00;
+    outline-offset: 4px;
+}
+
+/* DISEÑO PARA CELULARES */
+
+@media (max-width: 768px) {
+
+    .encabezado .contenedor {
+        flex-direction: column;
+    }
+
+    .menu {
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .portada-contenido {
+        flex-direction: column;
+    }
+
+    .portada h1 {
+        font-size: 32px;
+    }
+
+    .cursos-contenedor,
+    .accesibilidad-lista {
+        grid-template-columns: 1fr;
+    }
+
+    .titulo-seccion h2 {
+        font-size: 27px;
+    }
+
+}
